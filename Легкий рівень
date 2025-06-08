@@ -1,0 +1,30 @@
+num=[1, 2, 3, 4, 30, 5, -1, -2, -3, -4, -5]
+words=["apple", "banana", "cherry"]
+x = 2
+y = 3
+n = 5
+podilnyk = 10
+
+print("Числа більші за x:",[i for i in num if i > x])
+
+num_pos = [i for i in num if i > 0]
+print("Середнє арифметичне додатніх чисел:",sum(num_pos)/len(num_pos))
+
+print("Найбільше число серед менших за x:",max([i for i in num if i < x], default="немає чисел менших за x"))
+
+print("Cума чисел які діляться на y:",sum([i for i in num if i % y == 0]))
+
+num_square = [i**2 for i in num]
+print("Квадрати чисел:", num_square)
+
+print("Числа більші за 0:",[i for i in num if i > 0])
+
+prefix = "a"
+print(f"Рядки що починаються на '{prefix}':",[i for i in words if i.startswith(prefix)])
+
+print(f"Cума перших '{n}' чисел у списку:",sum(num[:n]))
+
+print("Паліндроми:",[i for i in words if i == i[::-1]])
+
+podilny = [i for i in num if i % podilnyk == 0]
+print(f"Числа які діляться на {podilnyk}:", podilny)
