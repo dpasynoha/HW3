@@ -1,0 +1,53 @@
+x = 2
+y = 3
+num = [i for i in range(1, 101)]
+print("числа, які діляться на X, але не діляться на Y:", [i for i in num if i % x == 0 and i % y != 0])
+
+num2 = [[2, 3, 4], [5, 6, 7], [8, 9, 10]]
+print(f"зведення списків {num2} в єдиний список:", [i for sublist in num2 for i in sublist])
+
+text = ["я Люблю плавати", "я люблю Читати", "Я люблю писати"]
+print("виділіть і введіть великі літери в окремих підрядках:", [''.join([char.upper() for char in t if char.isupper()]) for t in text])
+
+num7 = [2, 2, 4, 5, 6, 8, 8, 9, 8, 10, 11, 12, 13, 14, 15, 12, 17, 18, 19, 10]
+f={}
+for i in num7:
+    if i not in f:
+        f[i] = 1
+    else:
+        f[i] += 1
+fsorted = sorted(num7, key=lambda x: (-f[x], -x))
+print(fsorted)
+
+num3 = [i for i in range(30, 51)]
+num4 = [i for i in range(40, 201)]
+Condition = num3[0] < num4[0] and num3[-1] < num4[-1]
+if Condition:
+    num3and4 = num3 + num4
+    print("умовне об'єднання двох списків:", num3and4)
+else: print("умовне об'єднання двох списків не виконано, оскільки жодно з умов не виконується")
+
+dict = [{'age': 30}, {'age': 25}, {'age': 40}]
+aggregated_dict = {}
+for d in dict:
+    for key, age in d.items():
+        if key not in aggregated_dict:
+            aggregated_dict[key] = 0
+        aggregated_dict[key] += age
+print("Агрегований словник:", aggregated_dict)
+
+num5 = [i for i in range(-10, 11)]
+print("заміна елементів на основі стану:", ["додатне" if i > 0 else "негативне" if i < 0 else "нуль" for i in num5])
+
+words = ["apple", "banana", "cherry", "date"]
+X = int(input("Введіть число X: "))
+print("підрахувати кількість рядків довжиною більше X:", sum(1 for word in words if len(word) > X))
+
+r1 = ['я','ти','ми']
+r2 = ['люблю','плавав','літали']
+print("об’єднувати рядки по черзі з двох списків", [r1 + '  ' + r2 for r1, r2 in zip(r1, r2)])
+
+num6 = [1, 2, 3, 4, 5]
+A = int(input("Введіть число X: "))
+B = int(input("Введіть число Y: "))
+print("помножити числа на Y, якщо вони більші за X.:", [i * B if i > A else i for i in num6])
